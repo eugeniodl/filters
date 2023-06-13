@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace filters.Filters
+namespace Filters.Filters
 {
     public class MySampleActionFilterAttribute : Attribute, IActionFilter
     {
@@ -10,7 +10,6 @@ namespace filters.Filters
         {
             _name = name;
         }
-
         public void OnActionExecuted(ActionExecutedContext context)
         {
             Console.WriteLine($"Action Filter - After {_name}");

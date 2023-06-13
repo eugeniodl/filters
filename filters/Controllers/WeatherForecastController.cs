@@ -1,22 +1,22 @@
-using filters.Filters;
-using filters.Helpers;
+using Filters.Filters;
+using Filters.Helpers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace filters.Controllers
+namespace Filters.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     [TypeFilter(typeof(MySampleExceptionFilter))]
-    public class TestExceptionController : ControllerBase
+    public class UserController : ControllerBase
     {
         public string Get()
         {
-            //throw new NotImplementedException();
+            //return "Hello World";
             throw new MyException("My Exception");
         }
     }
 
-        [ApiController]
+    [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
@@ -33,7 +33,7 @@ namespace filters.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        [MySampleActionFilter("Action")]
+        [MySampleActionFilterAttribute("Action")]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

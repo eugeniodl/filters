@@ -1,8 +1,8 @@
-﻿namespace filters.Helpers
+﻿namespace Filters.Helpers
 {
     public class MyException : Exception
     {
-        public MyException(string Message) : base(Message)
+        public MyException(string message) : base(message)
         {
 
         }

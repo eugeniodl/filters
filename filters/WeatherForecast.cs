@@ -1,4 +1,4 @@
-namespace filters
+namespace Filters
 {
     public class WeatherForecast
     {
